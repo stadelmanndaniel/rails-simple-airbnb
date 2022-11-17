@@ -1,0 +1,12 @@
+<h1>Create new flat form</h1>
+
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name, label_html: { class: 'my_class' }, hint_html: { class: 'hint_class' } %>
+  <%= f.input :address, hint: false, error_html: { id: 'password_error' } %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night, input_html: { class: 'number' } %>
+  <%= f.input :number_of_guests, input_html: { class: 'number' } %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back to overview", flats_path %>

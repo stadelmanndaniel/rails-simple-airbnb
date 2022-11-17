@@ -1,0 +1,27 @@
+<h1>All flats</h1>
+
+<%= link_to "Add new flat", new_flat_path %>
+
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-sm-4">
+      <div class="flat-card-content border m-3">
+      <div class="flat-card-image" style="background-image: url('https://thespaces.com/wp-content/uploads/2017/01/Lisbon-apartments-for-rent-Baixa-House-1.jpg')"></div>
+        <p><%= flat.name %></p>
+        <p><%= flat.address %></p>
+        <p><%= flat.description %></p>
+        <div class="flex">
+          <div class="flex align-items-center">
+            <i class="fa-solid fa-euro-sign"><%= flat.price_per_night %></i>
+          </div>
+          <div class="flex align-items-center">
+            <i class="fa-solid fa-people-group"><%= flat.number_of_guests %></i>
+          </div>
+        </div>
+      </div>
+      <%= link_to "Show details", flat%>
+      </div>
+    <% end %>
+  </div>
+</div>
